@@ -1,0 +1,29 @@
+{% extends "employee/base.html" %}
+{% block title %}Employee information page{% endblock %}
+
+{% block content %}
+<table class="table table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>Mã số nhân viên</th>
+            <th>Tên nhân viên</th>
+            <th>Giới tính</th>
+            <th>Tuổi</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for employee in employees %}
+            <tr>
+                <td>{{ employee.employee_code }}</td>
+                <td>{{ employee.employee_name }}</td>
+                {% if employee.employee_sex == 1 %}
+                    <td>Nam</td>
+                {% else %}
+                    <td>Nữ</td>
+                {% endif %}
+                <td>{{ employee.employee_age }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

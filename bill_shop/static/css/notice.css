@@ -1,0 +1,75 @@
+﻿.main-notice {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial;
+    display: none;
+}
+
+    .main-notice .notice-content {
+        width: 400px;
+        height: 150px;
+        background-color: #ddd;
+        border-radius: 5px;
+        position: absolute;
+    }
+
+        .main-notice .notice-content .notice-title {
+            height: 35px;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .main-notice .notice-content .notice-main {
+            width: 384px;
+            height: 107px;
+            background-color: #fff;
+            border-radius: 5px;
+            margin: 0 8px 8px 8px;
+            position: relative;
+        }
+
+.notice-main #notice-main-content {
+    display: flex;
+    height: 75px;
+    width: 100%;
+    margin-left: 0;
+}
+
+.notice-main .notice-main-icon {
+    background: url("../images/notice.png") no-repeat;
+    width: 200px;
+    height: 200px;
+    transform: scale(0.2);
+    position: absolute;
+    top: -73px;
+    left: -70px;
+}
+
+.notice-main .notice-main-text {
+    width: calc(100% - 50px);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 60px;
+}
+
+.notice-main #notice-main-button {
+    display: flex;
+    justify-content: right;
+    width: 100%;
+    margin-left: -7px;
+}
+
+.notice-main button {
+    width: 80px;
+    min-width: 60px;
+    margin-left: 7px;
+}

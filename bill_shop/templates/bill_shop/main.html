@@ -1,0 +1,348 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <meta charset="utf-8" />
+    <title>Trang chủ</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/head.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/products.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bill.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/notice.css' %}">
+</head>
+<body>
+    <!--Phần đầu-->
+    <div class="head">
+        <div class="head-menu" id="head-menu"></div>
+        <div class="head-menu-text" id="head-menu-text"><b>Menu</b></div>
+    </div>
+
+    <!--Phần thân-->
+    <div class="main">
+        <div class="main-left">
+            <div class="option">
+                <ul id="option-mode">
+                    <li op-mode="1" class="option-selected">
+                        <div class="caculate-icon"></div>
+                        Tính tiền
+                    </li>
+                    <li op-mode="2">
+                        <div class="product-icon"></div>
+                        Sản phẩm
+                    </li>
+                    <li op-mode="3">
+                        <div class="bill-icon"></div>
+                        Hóa đơn
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="main-right">
+            <div class="main-right-title">
+                <p id="main-title">Danh mục tính tiền</p>
+            </div>
+
+            <div class="main-right-result">
+                <!--Giao diện tính tiền-->
+                <div class="main-caculate">
+                    <div class="caculate-common">
+                        <label class="caculate-title">Thông tin chung</label>
+                        <div class="common-main">
+                            <div class="row" id="row-common-1">
+                                <div class="col-sm-6">
+                                    <label>Mã hóa đơn</label>
+                                    <input id="bill-code" class="form-control" />
+                                </div>
+                                <div class="col-sm-6">
+                                    <label style="padding-left: 21px">Ngày bán</label>
+                                    <input id="bill-date" type="date" class="form-control" style="text-align: center" />
+                                </div>
+                            </div>
+                            <div class="row" id="row-common-2">
+                                <div class="col-sm-6">
+                                    <label>Người bán</label>
+                                    <input id="bill-employee" class="form-control" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="caculate-detail">
+                        <label class="caculate-title">Thông tin mặt hàng</label>
+                        <div class="detail-main">
+                            <div class="row" id="row-detail-1">
+                                <div class="col-sm-4" id="detail-1">
+                                    <label>Mã hàng</label>
+                                    <input id="caculate-code" class="form-control" />
+                                </div>
+                                <div class="col-sm-4" id="detail-2">
+                                    <label>Tên hàng</label>
+                                    <input id="caculate-name" class="form-control" readonly />
+                                </div>
+                                <div class="col-sm-4" id="detail-3">
+                                    <label style="padding-left: 7px; padding-right: 6px">Đơn giá</label>
+                                    <input id="caculate-price" class="form-control" readonly />
+                                    <div class="format-money">(VND)</div>
+                                </div>
+                            </div>
+
+                            <div class="row" id="row-detail-2">
+                                <div class="col-sm-4" id="detail-4">
+                                    <label>Số lượng</label>
+                                    <input id="caculate-quatity" class="form-control" style="margin-left: 1px" type="number" min=0 oninput="validity.valid||(value='');" />
+                                </div>
+                                <div class="col-sm-4" id="detail-5">
+                                    <label>Giảm giá</label>
+                                    <input id="caculate-sale" class="form-control" style="margin-left: 8px" />
+                                </div>
+                                <div class="col-sm-4" id="detail-6">
+                                    <label>Thành tiền</label>
+                                    <input id="caculate-total" class="form-control" style="margin-left: 1px" readonly />
+                                    <div class="format-money">(VND)</div>
+                                </div>
+                            </div>
+                            <div class="table-content">
+                                <div class="table-main">
+                                    <table id="table-main">
+                                        <thead>
+                                            <tr class="row-odd">
+                                                <th>STT</th>
+                                                <th>Mã hàng</th>
+                                                <th>Tên hàng</th>
+                                                <th>Số lượng</th>
+                                                <th>Đơn giá</th>
+                                                <th>Giảm giá</th>
+                                                <th>Thành tiền</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                            <div class="caculate-result">
+                                <div class="row" style="padding-top: 20px; margin-bottom: 10px">
+                                    <div class="col-sm-8"><label id="sum-text">Tiền bằng chữ</label></div>
+                                    <div class="col-sm-4" style="margin-right: 3px">
+                                        <label style="margin-bottom: 0; margin-top: 3px">Tổng tiền</label>
+                                        <div class="format-money">(VND)</div>
+                                        <input id="caculate-sum" class="form-control" style="text-align: right; padding-right: 55px" readonly />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="caculate-buttons">
+                                <div class="row" style="padding-top: 10px">
+                                    <div class="col-sm-3">
+                                        <button class="btn" id="caculate-button-add">
+                                            <div class="caculate-button" id="caculate-icon-add"></div>
+                                            Thêm hóa đơn
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <button class="btn" id="caculate-button-save">
+                                            <div class="caculate-button" id="caculate-icon-save"></div>
+                                            Lưu hóa đơn
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-3">
+
+                                        <button class="btn" id="caculate-button-delete">
+                                            <div class="caculate-button" id="caculate-icon-delete"></div>
+                                            Hủy hóa đơn
+                                        </button>
+                                    </div>
+                                    <div class="col-sm-3" style="padding-right: 8px">
+                                        <button class="btn" id="caculate-button-print">
+                                            <div class="caculate-button" id="caculate-icon-print"></div>
+                                            In hóa đơn
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Giao diện sản phẩm và hóa đơn-->
+                <div class="main-product" style="display: none">
+                    <div class="bill-info" style="height: 265px; width: 100%;">
+                        <label id="bl-title">Thông tin hóa đơn</label>
+                        <div class="row" style="padding-top: 30px">
+                            <label>Mã hóa đơn</label>
+                            <input id="bill-code" class="form-control" style="margin-left: 5px" />
+                        </div>
+                        <div class="row">
+                            <label>Ngày tạo</label>
+                            <input id="bill-name" class="form-control" style="margin-left: 25px" />
+                        </div>
+                        <div class="row">
+                            <label style="white-space: nowrap">Mô tả</label>
+                            <textarea id="bill-desciption" rows="4" cols="50" class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <label id="pr-title">Thông tin sản phẩm</label>
+                        <div class="col-sm-8">
+                            <div class="row" style="padding-top: 30px">
+                                <label>Mã hàng</label>
+                                <input id="product-code" class="form-control" style="margin-left: 20px" />
+                            </div>
+                            <div class="row">
+                                <label>Tên hàng</label>
+                                <input id="product-name" class="form-control" />
+                            </div>
+                            <div class="row" style="position: relative;">
+                                <label>Đơn giá</label>
+                                <div class="format-money" style="top: 12px; right: 10px;">(VND)</div>
+                                <input id="product-price" class="form-control" style="margin-left: 24px" />
+                            </div>
+                            <div class="row">
+                                <label style="white-space: nowrap">Mô tả</label>
+                                <textarea id="product-desciption" rows="4" cols="50" class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="row" id="pr-photo">
+                                <b>Ảnh sản phẩm</b>
+                            </div>
+                            <div class="product-photo">
+                                <img id="product-photo" src="../static/images/productDefault.gif" style="max-width: 100%; height: 100%">
+                            </div>
+                            <input type="file" style="display: none" id="product-input-photo" />
+                            <button class="btn" id="product-button-photo">
+                                <div class="dot"></div>
+                                <div class="dot" style="left: 10px"></div>
+                                <div class="dot" style="left: 16px"></div>
+                            </button>
+                            <label for="product-input-photo" class="btn" id="product-button-photo"></label>
+                            <button class="btn" id="product-button-delphoto" style="left: calc(50% + 5px);">
+                                <div class="caculate-button" id="product-icon-delphoto"></div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="pr-table">
+                        <div class="table-main">
+                            <table id="product-table">
+                                <thead>
+                                    <tr style="background-color: #eee">
+                                        <th>STT</th>
+                                        <th>Mã hàng</th>
+                                        <th>Tên hàng</th>
+                                        <th>Đơn giá</th>
+                                        <th>Mô tả</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                            <table id="bill-table" style="display: none">
+                                <thead>
+                                    <tr style="background-color: #eee">
+                                        <th>STT</th>
+                                        <th>Mã hóa đơn</th>
+                                        <th>Ngày tạo</th>
+                                        <th>Tổng tiền</th>
+                                        <th>Ghi chú</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="product-split">
+                        <div class="row" id="split-button" style="align-items: center">
+                            <div class="col-sm-3">
+                                <img id="page-first" src="../static/images/grid/page-first.png">
+                                <img id="page-pre" src="../static/images/grid/page-prev.png">
+                            </div>
+                            <div class="col-sm-1" style="padding: 0; text-align: right">Trang</div>
+                            <div class="col-sm-2" style="display: flex; padding: 5px 5px">
+                                <input id="page-index" type="text" class="form-control" />
+                            </div>
+                            <div class="col-sm-1" style="padding: 5px 0px"><p id="total-page">trên 1</p></div>
+                            <div class="col-sm-2" style="padding-right: 0; display: flex;">
+                                <select style="height: 20px" id="rowOnPage">
+                                    <option>50</option>
+                                    <option>100</option>
+                                    <option>200</option>
+                                </select>
+                                <p id="total-product" style="margin: 0 0 0 5px;">trên 0</p>
+                            </div>
+                            <div class="col-sm-3" style="text-align: right">
+                                <a title="Chuyển đến trang tiếp theo"><img id="page-next" src="../static/images/grid/page-next.png"></a>
+                                <a title="Chuyển đến trang cuối cùng"><img id="page-last" src="../static/images/grid/page-last.png"></a>
+                                <a title="Tải lại dữ liệu"><img id="load-page" src="../static/images/grid/refresh.png" style="margin-right: 0px"></a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="product-button">
+                        <div class="row" style="padding-top: 0">
+                            <div class="col-sm-3" style="padding-left:0">
+                                <button class="btn" id="product-button-add">
+                                    <div class="caculate-button" id="product-icon-add"></div>
+                                    Thêm
+                                </button>
+                            </div>
+                            <div class="col-sm-3">
+                                <button class="btn" id="product-button-edit">
+                                    <div class="caculate-button" id="product-icon-edit"></div>
+                                    Sửa
+                                </button>
+                            </div>
+                            <div class="col-sm-3">
+                                <button class="btn" id="product-button-delete">
+                                    <div class="caculate-button" id="product-icon-delete"></div>
+                                    Xóa
+                                </button>
+                            </div>
+                            <div class="col-sm-3" style="padding-right: 0">
+                                <button class="btn" id="product-button-close">
+                                    <div class="caculate-button" id="product-icon-close"></div>
+                                    Đóng
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Giao diện thông báo/cảnh báo-->
+    <div class="main-notice">
+        <div class="notice-content">
+            <div class="notice-title">
+                <label id="notice-title" style="margin-bottom: 0">Thông báo</label>
+            </div>
+            <div class="notice-main">
+                <div class="row" id="notice-main-content">
+                    <div class="notice-main-icon"></div>
+                    <div class="notice-main-text">Bạn có chắc chắn muốn xóa sản phẩm này không?</div>
+                </div>
+                <div class="row" id="notice-main-button">
+                    <button class="btn" id="notice-button-cf">Đồng ý</button>
+                    <button class="btn" id="notice-button-dl">Hủy bỏ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/common.js' %}"></script>
+    <script src="{% static 'js/caculate.js' %}"></script>
+    <script src="{% static 'js/product.js' %}"></script>
+    <script src="{% static 'js/bill.js' %}"></script>
+</body>
+</html>
+
+
+

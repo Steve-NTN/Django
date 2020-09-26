@@ -1,0 +1,168 @@
+﻿.main-product {
+    width: calc(100% - 10px);
+    height: calc(100vh - 111px);
+    margin-left: 5px;
+    background-color: #ddd;
+}
+
+    .main-product .row {
+        padding-top: 10px;
+        margin-right: 0;
+        margin-left: 0;
+        display: flex;
+    }
+
+        .main-product .row input {
+            height: 25px;
+            width: calc(100% - 80px);
+            margin-left: 15px;
+            line-height: normal;
+            min-width: 160px;
+        }
+
+    .main-product .product-info {
+        position: relative;
+        height: 265px;
+        border-bottom: 1px solid #cbc3c3;
+        display: flex;
+    }
+
+        .main-product .product-info .col-sm-4 {
+            height: 250px;
+            padding: 0 8px 0 3px;
+        }
+
+            .main-product .product-info .col-sm-4 .product-photo {
+                width: 100%;
+                height: calc(100% - 30px);
+                border: 1px solid #cbc3c3;
+                margin-top: 5px;
+                background-color: #fff;
+                justify-content: center;
+                display: flex;
+            }
+
+        .main-product .product-info .col-sm-8 {
+            padding-left: 8px;
+            padding-right: 5px;
+        }
+
+        .main-product .product-info #pr-title, .bill-info #bl-title {
+            position: absolute;
+            top: 6px;
+            left: 8px;
+        }
+
+        .main-product .product-info #pr-photo {
+            padding-top: 5px;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .main-product .product-info #product-button-photo, #product-button-delphoto {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            bottom: 10px;
+            left: calc(50% - 35px);
+            min-width: 25px;
+        }
+
+.dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #000;
+    position: absolute;
+    top: 10px;
+    left: 3px;
+}
+
+.main-product .product-info #product-icon-delphoto {
+    background: url("../images/delete.png") no-repeat 5px 5px;
+    left: -93px;
+}
+
+.main-product .product-info .col-sm-8 label {
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+.main-product .product-info input {
+    font-size: 15px;
+}
+
+.main-product .product-info #product-price {
+    text-align: right;
+    padding-right: 55px;
+}
+
+.main-product .product-info textarea {
+    margin-left: 37px;
+    margin-right: 3px;
+    max-height: 100px;
+    width: calc(100% - 78px);
+}
+
+.main-product .pr-table {
+    width: 100%;
+    height: 300px;
+    border-top: 1px solid #fff;
+}
+
+.main-product #product-table, #bill-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.main-product .product-split {
+    margin-top: 10px;
+    border-bottom: 1px solid #cbc3c3;
+}
+
+    .main-product .product-split .col-sm-2 input {
+        margin: 0;
+        min-width: 50px;
+        width: 100%;
+    }
+
+.product-split #total-page {
+    white-space: nowrap;
+    margin-bottom: 0;
+}
+
+.product-split img {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.main-product .product-button {
+    border-top: 1px solid #fff;
+    padding-top: 10px;
+}
+
+.main-product .product-split .row, .product-button .row {
+    height: 25px;
+    margin-bottom: 12px;
+    width: calc(100% - 16px);
+    margin-left: 8px;
+}
+
+.product-button #product-icon-add {
+    transform: scale(0.07);
+}
+
+.product-button #product-icon-edit {
+    background: url("../images/edit.png") no-repeat 5px 5px;
+    transform: scale(0.13);
+}
+
+.product-button #product-icon-delete {
+    background: url("../images/delete.png") no-repeat 5px 5px;
+    transform: scale(0.1);
+}
+
+.product-button #product-icon-close {
+    background: url("../images/close.png") no-repeat 5px 5px;
+    transform: scale(0.07);
+}

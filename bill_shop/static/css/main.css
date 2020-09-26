@@ -1,0 +1,315 @@
+﻿body {
+    margin: 0;
+    font-size: 15px;
+    font-family: Arial;
+    min-width: 920px;
+    min-height: 750px;
+    background-color: #ddd;
+}
+
+/*Phần giữa*/
+.main {
+    width: 100%;
+    display: flex;
+    background-color: #ddd;
+}
+
+/*Phần giữa trái*/
+.main-left {
+    width: 200px;
+    height: calc(100% - 5px);
+    background-color: #ddd;
+    border-top: 1px solid #cbc3c3;
+}
+
+    .main-left ul {
+        padding-left: 0;
+    }
+
+    .main-left li {
+        padding: 15px;
+        width: 200px;
+        list-style: none;
+        border-bottom: 1px solid #cbc3c3;
+        border-top: 1px solid #fff;
+        display: flex;
+        position: relative;
+        padding-left: 45px;
+        cursor: pointer;
+    }
+
+    .main-left .caculate-icon {
+        background: url("../images/calculator.png") no-repeat -25px 0px;
+        width: 202px;
+        height: 265px;
+        margin-right: 10px;
+        transform: scale(0.1);
+        position: absolute;
+        top: -107px;
+        left: -78px;
+    }
+
+    .main-left .product-icon {
+        background: url("../images/box.png") no-repeat -12px -15px;
+        width: 170px;
+        height: 170px;
+        margin-right: 10px;
+        transform: scale(0.14);
+        position: absolute;
+        top: -60px;
+        left: -60px;
+    }
+
+    .main-left .bill-icon {
+        background: url("../images/bill.png") no-repeat -30px -15px;
+        width: 190px;
+        height: 235px;
+        margin-right: 10px;
+        transform: scale(0.1);
+        position: absolute;
+        top: -93px;
+        left: -70px;
+    }
+
+
+.option-selected {
+    background-color: #808080;
+}
+
+
+/*Phần giữa phải*/
+.main-right {
+    width: calc(100% - 200px);
+    height: 100%;
+    background-color: #fff;
+    border-left: 1px solid #cbc3c3;
+    border-top: 1px solid #cbc3c3;
+}
+
+    .main-right .main-right-title {
+        width: 100%;
+        height: 60px;
+    }
+
+        .main-right .main-right-title p {
+            font-size: 30px;
+            padding: 10px;
+            text-align: center;
+        }
+
+    .main-right .main-right-result {
+        width: 100%;
+        height: calc(100% - 60px);
+    }
+
+        .main-right .main-right-result .main-caculate {
+            width: calc(100% - 10px);
+            height: 100%;
+            margin-left: 5px;
+            border: 1px solid #ddd;
+            min-width: 710px;
+        }
+
+            .main-right .main-right-result .main-caculate .caculate-title {
+                position: absolute;
+                top: 6px;
+                left: 8px;
+            }
+
+
+            .main-right .main-right-result .main-caculate .caculate-common {
+                position: relative;
+            }
+
+            .main-right .main-right-result .main-caculate .common-main {
+                background-color: #ddd;
+                width: 100%;
+                height: 150px;
+                border-bottom: 1px solid #cbc3c3;
+            }
+
+.common-main .row {
+    padding-top: 30px;
+    margin-right: 0;
+    margin-left: 0;
+    display: flex;
+}
+
+    .common-main .row input {
+        height: 25px;
+        width: calc(100% - 100px);
+        margin-left: 7px;
+        line-height: normal;
+        min-width: 160px;
+    }
+
+.common-main #row-common-2 {
+    padding-top: 10px;
+}
+
+    .common-main #row-common-2 label {
+        padding-right: 8px;
+    }
+
+.common-main .row .col-sm-6 {
+    padding-left: 8px;
+    padding-right: 0;
+    display: flex;
+}
+
+.common-main .row label {
+    font-weight: normal;
+}
+
+.main-right .main-right-result .main-caculate .caculate-detail {
+    position: relative;
+}
+
+.main-right .main-right-result .main-caculate .detail-main {
+    background-color: #ddd;
+    width: 100%;
+    border-top: 1px solid #fff;
+}
+
+.detail-main .row {
+    padding-top: 30px;
+    margin-right: 0;
+    margin-left: 0;
+    display: flex;
+}
+
+.detail-main #row-detail-2 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #cbc3c3;
+}
+
+.detail-main .col-sm-4 {
+    padding-left: 0;
+    padding-right: 0;
+    display: flex;
+}
+
+    .detail-main .col-sm-4 #caculate-price, #caculate-total {
+        width: calc(100% - 78px);
+    }
+
+.detail-main #detail-1, #detail-4 {
+    padding-left: 8px;
+}
+
+.detail-main #detail-3 input, #detail-6 input {
+    text-align: right;
+    padding-right: 55px;
+}
+
+.detail-main .row input {
+    height: 25px;
+    width: calc(100% - 72px);
+    margin-left: 5px;
+    line-height: normal;
+    min-width: 160px;
+}
+
+.format-money {
+    position: absolute;
+    right: 15px;
+    top: 2px;
+}
+
+.detail-main .row label {
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+.detail-main .table-content {
+    border-top: 1px solid #fff;
+    height: 300px;
+}
+
+.table-main {
+    margin-top: 10px;
+    width: calc(100% - 16px);
+    margin-left: 8px;
+    background-color: #fff;
+    height: 300px;
+    border: 1px solid #cbc3c3;
+    overflow-x: auto;
+    overflow-y: scroll;
+}
+
+.detail-main .table-content #table-main {
+    border-top: 1px solid #cbc3c3;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table-main th, .table-main td {
+    border: 1px solid #cbc3c3;
+    height: 20px;
+    text-align: center;
+}
+
+.row-odd {
+    background-color: #eee;
+}
+
+.detail-main .caculate-result {
+    border-bottom: 1px solid #cbc3c3;
+}
+
+    .detail-main .caculate-result #sum-text {
+        white-space: normal;
+        margin-bottom: 0;
+        padding-top: 3px;
+    }
+
+.main-right .caculate-buttons {
+    border-top: 1px solid #fff;
+    height: 125px;
+}
+
+.btn {
+    width: 100%;
+    height: 25px;
+    padding: 0;
+    min-width: 140px;
+    font-size: 15px;
+}
+
+.caculate-button {
+    background: url("../images/add.png") no-repeat 5px 5px;
+    width: 210px;
+    height: 210px;
+    margin-right: 10px;
+    transform: scale(0.1);
+    position: absolute;
+    top: -93px;
+    left: -83px;
+}
+
+.caculate-buttons #caculate-icon-add {
+    transform: scale(0.07);
+}
+
+.caculate-buttons #caculate-icon-save {
+    background: url("../images/save.png") no-repeat 5px 5px;
+    transform: scale(0.09);
+}
+
+.caculate-buttons #caculate-icon-delete {
+    background: url("../images/delete.png") no-repeat 5px 5px;
+}
+
+.caculate-buttons #caculate-icon-print {
+    background: url("../images/print.png") no-repeat 5px 5px;
+}
+
+.col-sm-3 {
+    padding-left: 8px;
+    padding-right: 5px
+}
+
+.row-clicked {
+    background-color: #808080;
+}
